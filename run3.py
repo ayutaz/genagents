@@ -26,7 +26,62 @@ agent_profiles = [
         "occupation": "織物師",
         "interests": ["織物", "薬草", "音楽"]
     },
-    # 他の8人のプロフィールを追加
+    {
+        "first_name": "ひろし",
+        "last_name": "やまだ",
+        "age": random.randint(20, 40),
+        "occupation": "狩人",
+        "interests": ["狩猟", "追跡", "登山"]
+    },
+    {
+        "first_name": "ゆみ",
+        "last_name": "さとう",
+        "age": random.randint(20, 40),
+        "occupation": "陶芸家",
+        "interests": ["陶芸", "芸術", "デザイン"]
+    },
+    {
+        "first_name": "けんた",
+        "last_name": "こばやし",
+        "age": random.randint(20, 40),
+        "occupation": "漁師",
+        "interests": ["漁業", "船作り", "水泳"]
+    },
+    {
+        "first_name": "さくら",
+        "last_name": "わたなべ",
+        "age": random.randint(20, 40),
+        "occupation": "大工",
+        "interests": ["木工", "建築", "絵画"]
+    },
+    {
+        "first_name": "だいち",
+        "last_name": "いとう",
+        "age": random.randint(20, 40),
+        "occupation": "薬草師",
+        "interests": ["薬草学", "園芸", "料理"]
+    },
+    {
+        "first_name": "ゆうこ",
+        "last_name": "なかむら",
+        "age": random.randint(20, 40),
+        "occupation": "語り部",
+        "interests": ["物語", "音楽", "踊り"]
+    },
+    {
+        "first_name": "さとし",
+        "last_name": "かとう",
+        "age": random.randint(20, 40),
+        "occupation": "交易商",
+        "interests": ["交易", "探索", "交渉"]
+    },
+    {
+        "first_name": "めぐみ",
+        "last_name": "よしだ",
+        "age": random.randint(20, 40),
+        "occupation": "庭師",
+        "interests": ["農業", "植栽", "自然"]
+    }
 ]
 
 # プログラムで追加のプロフィールを生成
@@ -52,16 +107,6 @@ interests = [
     ["交易", "探索", "交渉"],
     ["農業", "植栽", "自然"]
 ]
-
-for i in range(8):
-    profile = {
-        "first_name": names[i][0],
-        "last_name": names[i][1],
-        "age": random.randint(20, 40),
-        "occupation": occupations[i],
-        "interests": interests[i]
-    }
-    agent_profiles.append(profile)
 
 # エージェントの初期化
 agents = []
@@ -147,13 +192,6 @@ for year in range(total_years):
                 # 相互に記憶
                 agent_a.remember(f"{agent_b.scratch['first_name']} と会話した。", time_step)
                 agent_b.remember(f"{agent_a.scratch['first_name']} と会話した。", time_step)
-
-    # オプション: エージェントの状態を毎年保存
-    # for agent in agents:
-    #     agent_folder = f"simulation_agents/{agent.scratch['first_name']}_{agent.scratch['last_name']}"
-    #     if not os.path.exists(agent_folder):
-    #         os.makedirs(agent_folder)
-    #     agent.save(agent_folder)
 
 # ----- 3. 結果の分析 -----
 
