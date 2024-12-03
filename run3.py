@@ -118,7 +118,7 @@ for profile in agent_profiles:
 
 # ----- 2. 年次シミュレーション -----
 
-total_years = 100
+total_years = 10
 current_year = 3000  # 西暦3000年からスタート
 time_step = 0  # タイムステップ
 
